@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manan Gulati - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      background: #f4f4f4;
+      color: #333;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.15;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 10;
+      text-align: center;
+      padding: 1rem 0;
+      border-bottom: 2px solid #00bfff;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bfff;
+    }
+
+    section {
+      display: none;
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1, h2 {
+      color: #00bfff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+    }
+
+    p, li {
+      line-height: 1.6;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00bfff;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #1e90ff;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contact-link img {
+      width: 24px;
+      vertical-align: middle;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #00bfff88;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00bfff88;
+    }
+
+    .project-card h3 {
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .project-card p, .project-card li {
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      section {
+        margin: 80px 20px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background GIF -->
+  <img id="bg-video" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjMxZThpNG56NzQ1ZnljZDhrbjg4cXg1dzhsamRhZmJvc2FicXRpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vRbNFMuFt5Zm372/giphy.gif" alt="Background GIF">
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('about')">About</a></li>
+      <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+      <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="active">
+    <h1>Hi, I'm Manan Gulati</h1>
+    <p>B.Tech CSE 1st Year - 2nd Sem</p>
+    <a href="#" onclick="showSection('contact')" class="cta-button">Get in Touch</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="project-card"><h3>Name</h3><p>Manan Gulati</p></div>
+    <div class="project-card"><h3>Class</h3><p>CSE 2</p></div>
+    <div class="project-card"><h3>Roll No</h3><p>27105</p></div>
+    <div class="project-card"><h3>Hobbies</h3><p>Gaming, Reading, Singing</p></div>
+    <div class="project-card"><h3>Strength</h3><p>I can form my own logic on the spot if required.</p></div>
+    <div class="project-card"><h3>Weakness</h3><p>I have a memory of a goldfish.</p></div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="project-card">
+      <h3>Languages</h3>
+      <ul>
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>C</li><li>Python</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <h3>Other Skills</h3>
+      <ul>
+        <li>Image Editing</li><li>Video Editing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card"><h3>Blockchain Voting and Bidding</h3><p>A decentralized blockchain-based voting and bidding system built using smart contracts on Ethereum.</p></div>
+    <div class="project-card"><h3>Portfolio Website</h3><p>A personal responsive portfolio built with HTML, CSS, and JavaScript.</p></div>
+    <div class="project-card"><h3>ToDo List App</h3><p>A simple JavaScript-based task manager with local storage support.</p></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      <a href="https://www.instagram.com/manangulati.25" target="_blank">@manangulati.25</a>
+    </div>
+    <div class="contact-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      <a href="mailto:manangulati5124@gmail.com">manangulati5124@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- Script to handle transitions -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      const target = document.getElementById(sectionId);
+      target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
